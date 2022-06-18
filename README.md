@@ -90,23 +90,14 @@ Klik link berikut untuk melihat source codenya :
 Studi Kasus UB Company (Enkapsulasi dan Kelas Relasi)
 
 - class Main
-
-Klik link berikut untuk melihat source codenya :
-
 [Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%204/Main.java)
 
 ##
 - class Merchant
-
-Klik link berikut untuk melihat source codenya :
-
 [Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%204/Merchant.java)
 
 ##
 - class DataMerchant
-
-Klik link berikut untuk melihat source codenya :
-
 [Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%204/DataMerchant.java)
 
 
@@ -289,35 +280,20 @@ Fungsi hitung gajinya adalah : Gaji didapat dari hasil penjualan dikali komisi.
 Studi Kasus Game Melawan Titan (Exception Handling)
 
 - class Character
-
-Klik link berikut untuk melihat source codenya :
-
 [Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%208/Character.java)
 
 ##
 - class Healer
-
-Klik link berikut untuk melihat source codenya :
-
 [Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%208/Healer.java)
 
 ##
 - class Magician
-
-Klik link berikut untuk melihat source codenya :
-
 [Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%208/Magician.java)
 
 ##
 - class Titan
-
-Klik link berikut untuk melihat source codenya :
-
 [Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%208/Titan.java)
 
 ##
 - class Warrior
-
-Klik link berikut untuk melihat source codenya :
-
 [Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%208/Warrior.java)
