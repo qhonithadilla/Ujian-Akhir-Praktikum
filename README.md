@@ -71,1005 +71,207 @@ Klik link berikut untuk melihat source codenya :
 
 [Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%202/Solution.java)
 
+
+
 ##
 ## Tugas 3 
 
 Studi Kasus Erigo Store Malang
 
-```java
-package Main;
+Klik link berikut untuk melihat source codenya :
 
-import java.util.Scanner;
-
-public class baju {
-    final int bajua, bajub, bajuc;
-    int total;
-
-    public baju(int hargaa, int hargab, int hargac){
-        bajua = hargaa;
-        bajub = hargab;
-        bajuc = hargac;
-    }
-    public int getBajua(){
-        return bajua;
-    }
-    public int getBajub() {
-        return bajub;
-    }
-    public int getBajuc() {
-        return bajuc;
-    }
-    public void display (String jenis, int jumlah){
-        if (jenis.equalsIgnoreCase("a")){
-            total = getBajua() * jumlah;
-        }
-        else if (jenis.equalsIgnoreCase("b")){
-            total = getBajub() * jumlah;
-        }
-        else if (jenis.equalsIgnoreCase("c")){
-            total = getBajuc() * jumlah;
-        }
-        System.out.println("Jenis yang anda beli : " + jenis);
-        System.out.println("Harga per buah\t\t : " + getBajua() );
-        System.out.println("Total harga\t\t\t : " + total);
-    }
-
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-
-        baju hargabju = new baju(100000, 125000, 175000);
-        baju hrgdiskon = new baju(95000, 120000, 160000);
-
-        System.out.println("Baju yang tersedia : ");
-        System.out.print("""
-                Baju A dengan harga 100000
-                Baju B dengan harga 125000
-                Baju C dengan harga 175000
-                """);
-
-        System.out.print("Baju yang akan anda beli bertipe : ");
-        String pilih = scan.next();
-        if (pilih.equalsIgnoreCase("a")){
-            System.out.print("jumlah Baju yang akan anda beli adalah : ");
-            int jum = scan.nextInt();
-            if (jum <= 100){
-                hargabju.display(pilih, jum);
-            }
-            else {
-                hrgdiskon.display(pilih, jum);
-            }
-        }
-        else if (pilih.equalsIgnoreCase("b")){
-            System.out.print("jumlah Baju yang akan anda beli adalah : ");
-            int jum = scan.nextInt();
-            if (jum <= 100){
-                hargabju.display(pilih, jum);
-            }
-            else {
-                hrgdiskon.display(pilih, jum);
-            }
-        }
-        else if (pilih.equalsIgnoreCase("c")){
-            System.out.print("jumlah Baju yang akan anda beli adalah : ");
-            int jum = scan.nextInt();
-            if (jum <= 100){
-                hargabju.display(pilih, jum);
-            }
-            else {
-                hrgdiskon.display(pilih, jum);
-            }
-        }
-    }
-}
-```
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%203/baju.java)
 
 
+
+##
 ## Tugas 4
 
 Studi Kasus UB Company (Enkapsulasi dan Kelas Relasi)
 
 - class Main
 
-```java
-package Main;
+Klik link berikut untuk melihat source codenya :
 
-public class Main {
-    public static void main(String[] args) {
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%204/Main.java)
 
-        DataMerchant.merc = DataMerchant.tambahMerchant(new Merchant("Bakso Pak Sahid", "Bakso", 8000));
-        DataMerchant.merc = DataMerchant.tambahMerchant(new Merchant("Nasgor Mblebes", "Nasi Goreng Jawa", 10000));
-        DataMerchant.merc = DataMerchant.tambahMerchant(new Merchant("Ayam Geprek Kak Ros", "Ayam Kota Ekstra Nasi", 10000));
-
-        DataMerchant.merc = DataMerchant.tambahMerchant(new Merchant(DataMerchant.scan.nextLine(), DataMerchant.scan.nextLine(), DataMerchant.scan.nextDouble()));
-        DataMerchant.tampilData();
-    }
-}
-```
-
+##
 - class Merchant
 
-```java
-package Main;
+Klik link berikut untuk melihat source codenya :
 
-public class Merchant {
-    private String namaMerchant;
-    private String namaProduk;
-    private double hargaMakanan;
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%204/Merchant.java)
 
-    public Merchant(String namaMerchant, String namaProduk, double hargaMakanan) {
-        this.namaMerchant = namaMerchant;
-        this.namaProduk = namaProduk;
-        this.hargaMakanan = hargaMakanan;
-    }
-
-    public String getNamaMerchant() {
-        return namaMerchant;
-    }
-
-    public void setNamaMerchant(String namaMerchant) {
-        this.namaMerchant = namaMerchant;
-    }
-
-    public String getNamaProduk() {
-        return namaProduk;
-    }
-
-    public void setNamaProduk(String namaProduk) {
-        this.namaProduk = namaProduk;
-    }
-
-    public double getHargaMakanan() {
-        return hargaMakanan;
-    }
-
-    public void setHargaMakanan(double hargaMakanan) {
-        this.hargaMakanan = hargaMakanan;
-    }
-
-}
-```
-
+##
 - class DataMerchant
 
-```java
-package Main;
+Klik link berikut untuk melihat source codenya :
 
-import java.util.Scanner;
-
-public class DataMerchant {
-    static Scanner scan = new Scanner(System.in);
-    static Merchant[] merc = new Merchant[0];
-
-    public static Merchant[] tambahMerchant(Merchant merchant){
-        Merchant temp []=new Merchant[DataMerchant.merc.length+1];
-        for (int i = 0; i < DataMerchant.merc.length; i++){
-            temp [i]=DataMerchant.merc[i];
-        }
-        temp[DataMerchant.merc.length]=merchant;
-        return temp;
-    }
-
-    public static void tampilData(){
-        for (Merchant mch1 : merc){
-            System.out.println("====Tampilan Data Merchant Food====");
-            System.out.println("Nama Merchant   : "+mch1.getNamaMerchant());
-            System.out.println("Nama Produk     : "+mch1.getNamaProduk());
-            System.out.println("Harga           : "+(int)mch1.getHargaMakanan());
-        }
-    }
-
-    public static Merchant cariMerchant(String nama){
-        for(int i = 0; i < DataMerchant.merc.length; i++){
-            if (nama.equalsIgnoreCase(DataMerchant.merc[i].getNamaMerchant())){
-                return DataMerchant.merc[i];
-            }
-        }
-        return null;
-    }
-
-    public static void updateMerchant(Merchant merchant){
-
-    }
-}
-```
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%204/DataMerchant.java)
 
 
+
+##
 ## Tugas 5
 Studi Kasus Sewa Mobil (ArrayList)
 
 - class Main
-```java
-package Main;
 
-public class Main {
+Klik link berikut untuk melihat source codenya :
 
-    public static void main(String[] args) {
-        CarRider Maki = new CarRider ("Zenin Maki", 20, "080000000120");
-        CarRider Panda = new CarRider ("Panda", 22, "080000000305");
-        CarRider Yuta = new CarRider ("Okkotsu Yuta", 21, "080000000307");
-        CarRider Toge = new CarRider ("Inumaki Toge", 20, "080000001023");
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%205/Main.java)
 
-        CarData data = new CarData();
-        data.addCar ("SUV", "J 0120 JK", "Mercedes-Benz");
-        data.addCar ("SPORT", "J 0305 JK", "Lexus");
-        data.addCar ("ELECTRIC CAR", "J 0307 JK", "Tesla");
-        data.addCar ("OFFROAD", "J 1023 JK", "Jeep");
-
-        data.listOfCar();
-
-        RentArchive arsip = new RentArchive();
-        arsip.Rent (Maki, data.carList.get(0), 5);
-        arsip.Rent (Panda, data.carList.get(0), 3);
-        arsip.Rent (Yuta, data.carList.get(1), 1);
-        arsip.Rent (Toge, data.carList.get(1), 2);
-
-        System.out.println("");
-        arsip.info();
-    }
-}
-```
+##
 - class Car
-```java
-package Main;
 
-public class Car {
-    private String carType;
-    private String polNum;
-    private String merk;
-    private boolean status;
+Klik link berikut untuk melihat source codenya :
 
-    public Car (String carType, String polNum, String merk, Boolean status){
-        this.carType = carType;
-        this.polNum = polNum;
-        this. merk = merk;
-        this.status = status;
-    }
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%205/Car.java)
 
-    public String getCarType() {
-        return carType;
-    }
-
-    public String getPolNum() {
-        return polNum;
-    }
-
-    public String getMerk() {
-        return merk;
-    }
-
-    public boolean isStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-}
-```
-
+##
 - class CarData
-```java
-package Main;
 
-import java.util.ArrayList;
+Klik link berikut untuk melihat source codenya :
 
-public class CarData {
-    ArrayList<Car> carList = new ArrayList<>();
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%205/CarData.java)
 
-    public void addCar (String carType, String polNum, String merk){
-        carList.add(new Car(carType, polNum, merk, true));
-    }
-
-    public void listOfCar(){
-        System.out.println("=================================");
-        System.out.println("DAFTAR MOBIL");
-        System.out.println("=================================");
-
-        for (Car data : carList){
-            System.out.println("TIPE MOBIL  : " + data.getCarType());
-            System.out.println("NO. POLISI  : " + data.getPolNum());
-            System.out.println("MERK MOBIL  : " + data.getMerk());
-            System.out.println("=================================");
-        }
-        System.out.println("");
-    }
-}
-```
-
+##
 - class CarRent
-```java
-package Main;
 
-public class CarRent {
-    private CarRider rider;
-    private Car car;
-    private int rentDur;
+Klik link berikut untuk melihat source codenya :
 
-    public CarRent (CarRider rider, Car car, int rentDur){
-        this.rider = rider;
-        this.car = car;
-        this.rentDur = rentDur;
-    }
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%205/CarRent.java)
 
-    public CarRider getRider() {
-        return rider;
-    }
-
-    public Car getCar() {
-        return car;
-    }
-
-    public int getRentDur() {
-        return rentDur;
-    }
-}
-```
-
+##
 - class CarRider
-```java
-package Main;
 
-public class CarRider {
-    private String name;
-    private int age;
-    private String phone;
+Klik link berikut untuk melihat source codenya :
 
-    public CarRider (String name, int age, String phone){
-        this.name = name;
-        this.age = age;
-        this.phone = phone;
-    }
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%205/CarRider.java)
 
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-}
-```
-
+##
 - class RentArchive
-```java
-package Main;
 
-import java.util.ArrayList;
+Klik link berikut untuk melihat source codenya :
 
-public class RentArchive {
-    ArrayList<CarRent> rentData = new ArrayList<>();
-
-    public void Rent (CarRider rider, Car car, int rentDur){
-        if (car.isStatus()){
-            rentData.add(new CarRent(rider, car, rentDur));
-            System.out.println("MOBIL BERHASIL DISEWA");
-            car.setStatus(false);
-        }
-        else {
-            System.out.println("MAAF, MOBIL SUDAH DISEWA");
-        }
-    }
-
-    public void info(){
-        System.out.println("=================================");
-        System.out.println("INFORMASI PELANGGAN");
-        System.out.println("=================================");
-        for (CarRent data : rentData){
-            System.out.println("NAMA PEMINJAM : " + data.getRider().getName());
-            System.out.println("TIPE MOBIL    : " + data.getCar().getCarType());
-            System.out.println("NO. POLISI    : " + data.getCar().getPolNum());
-            System.out.println("LAMA RENTAL   : " + data.getRentDur());
-            System.out.println("=================================");
-        }
-    }
-}
-```
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%205/RentArchive.java)
 
 
+
+##
 ## Tugas 6
 Studi Kasus Profesi (Inheritance)
 
 - class Main
-```java
-package Main;
 
-public class Main {
+Klik link berikut untuk melihat source codenya :
 
-    public static void main(String[] args) {
-        Manusia man1 = new Manusia("Aku", "3923842934", true, true);
-        Manusia man2 = new Manusia("ani", "2394013453", false, true);
-        Manusia man3 = new Manusia("budi", "1029384633", true, false);
-        System.out.println(man1.toString());
-        System.out.println(man2.toString());
-        System.out.println(man3.toString());
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%206/Main.java)
 
-        MahasiswaFilkom mhs1 = new MahasiswaFilkom("I Putu Yoga", "351923848239", false, false, "205150601111018", 3.70);
-        MahasiswaFilkom mhs2 = new MahasiswaFilkom("Liam Simpati", "211923848288", true, false, "215150601211020", 3.25);
-        MahasiswaFilkom mhs3 = new MahasiswaFilkom("Harry Indosat", "201923848223", false, true, "225150601311030", 3.92);
-        System.out.println(mhs1.toString());
-        System.out.println(mhs2.toString());
-        System.out.println(mhs3.toString());
-
-        Pekerja pekerja1 = new Pekerja(7, 22, "195102439283", "Iqbal Biondy", "351717969", true, true);
-        Pekerja pekerja2 = new Pekerja(9, 21, "195102439230", "Charlie Spring", "351717912", true, false);
-        Pekerja pekerja3 = new Pekerja(5, 20, "195102439212", "Nick Nelson", "341717999", false, true);
-        System.out.println(pekerja1.toString());
-        System.out.println(pekerja2.toString());
-        System.out.println(pekerja3.toString());
-
-        Manajer manajer1 = new Manajer(9, 20, "204837283728", "Lyra Hertin", "351707384392", false, false, 1500);
-        Manajer manajer2 = new Manajer(7, 21, "204837283776", "Elle Yass", "351707384399", true, false, 1800);
-        Manajer manajer3 = new Manajer(8, 22, "204837283745", "Will Xu", "351707384323", false, true, 1400);
-        System.out.println(manajer1.toString());
-        System.out.println(manajer2.toString());
-        System.out.println(manajer3.toString());
-    }
-}
-```
+##
 - class Manusia
-```java
-package Main;
 
-public class Manusia {
-    private String nama;
-    private String NIK;
-    private boolean jenisKelamin;
-    private boolean menikah;
+Klik link berikut untuk melihat source codenya :
 
-    public String getNama() {
-        return nama;
-    }
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%206/Manusia.java)
 
-    public String getNIK() {
-        return NIK;
-    }
-
-    public boolean isJenisKelamin() {
-        return jenisKelamin;
-    }
-
-    public boolean isMenikah() {
-        return menikah;
-    }
-
-    public void setNama(String nama) {
-        this.nama = nama;
-    }
-
-    public void setNIK(String NIK) {
-        this.NIK = NIK;
-    }
-
-    public void setJenisKelamin(boolean jenisKelamin) {
-        this.jenisKelamin = jenisKelamin;
-    }
-
-    public void setMenikah(boolean menikah) {
-        this.menikah = menikah;
-    }
-
-    public double getTunjangan(){
-
-        return 0;
-    }
-
-    public double getPendapatan(){
-
-        return 0;
-    }
-
-    public String toString() {
-        return "Manusia{" + "nama='" + getNama() + '\'' + ", NIK='" + getNIK() + '\'' + ", jenisKelamin=" + isJenisKelamin() + ", pendapatan=" + getPendapatan() + '}';
-    }
-}
-```
+##
 - class Pekerja
-```java
-package Main;
 
-public class Pekerja extends Manusia {
-    private double gaji;
-    private double bonus;
-    private int jamKerja;
-    private int hariKerja;
-    private String NIP;
+Klik link berikut untuk melihat source codenya :
 
-    public double getGaji() {
-        return gaji;
-    }
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%206/Pekerja.java)
 
-    public double getBonus() {
-        return bonus;
-    }
-
-    public int getJamKerja() {
-        return jamKerja;
-    }
-
-    public int getHariKerja() {
-        return hariKerja;
-    }
-
-    public String getNIP() {
-        return NIP;
-    }
-
-    public void setGaji(double gaji) {
-        this.gaji = gaji;
-    }
-
-    public void setBonus(double bonus) {
-        this.bonus = bonus;
-    }
-
-    public void setJamKerja(int jamKerja) {
-        this.jamKerja = jamKerja;
-    }
-
-    public void setHariKerja(int hariKerja) {
-        this.hariKerja = hariKerja;
-    }
-
-    public void setNIP(String NIP) {
-        this.NIP = NIP;
-    }
-
-    public String getStatus(){
-
-        return null;
-    }
-
-    @Override
-    public String toString() {
-        super.toString();
-        return "Pekerja{" + "gaji=" + getGaji() + ", bonus=" + getBonus() + ", jamKerja=" + getJamKerja() + ", hariKerja=" + getHariKerja() + ", NIP='" + getNIP() + '\'' + '}';
-    }
-}
-```
+##
 - class MahasiswaFilkom
-```java
-package Main;
 
-public class MahasiswaFilkom extends Manusia {
-    private String NIM;
-    private double IPK;
+Klik link berikut untuk melihat source codenya :
 
-    public String getNIM() {
-        return NIM;
-    }
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%206/MahasiswaFilkom.java)
 
-    public double getIPK() {
-        return IPK;
-    }
-
-    public void setNIM(String NIM) {
-        this.NIM = NIM;
-    }
-
-    public void setIPK(double IPK) {
-        this.IPK = IPK;
-    }
-
-    public String getStatus(){
-
-        return null;
-    }
-
-    public double getBeasiswa(){
-
-        return 0;
-    }
-
-    @Override
-    public String toString() {
-        super.toString();
-        return "MahasiswaFilkom{" + "NIM='" + getNIM() + '\'' + ", IPK=" + getIPK() + '}';
-    }
-}
-```
+##
 - class Manajer
-```java
-package Main;
 
-public class Manajer extends Pekerja {
-    private int lamaKerja;
+Klik link berikut untuk melihat source codenya :
 
-    public int getLamaKerja() {
-        return lamaKerja;
-    }
-
-    public void setLamaKerja(int lamaKerja) {
-        this.lamaKerja = lamaKerja;
-    }
-}
-```
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%206/Manajer.java)
 
 
+
+##
 ## Tugas 7
 Studi Kasus Pengelompokkan Karyawan (Polimorfisme)
 
 - class Main
-```java
-package Main;
 
-public class Main {
+Klik link berikut untuk melihat source codenya :
 
-    public static void main(String[] args) {
-        Pegawai pegawaiTetap1 = new PegawaiTetap("Bayu", "350728490327424892342", 2000000.0);
-        Pegawai pegawaiTetap2 = new PegawaiTetap("Armand", "987651234958245029812", 4000000.0);
-        Pegawai pegawaiTetap3 = new PegawaiTetap("Max", "1284037294027463829876", 3500000.0);
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%207/Main.java)
 
-        Pegawai pegawaiHarian1 = new PegawaiHarian("Edo", "350728490327424892343", 8500.0, 40.0);
-        Pegawai pegawaiHarian2 = new PegawaiHarian("Harvey", "987651234958245029813", 9300.0, 80.0);
-        Pegawai pegawaiHarian3 = new PegawaiHarian("Keaton", "1284037294027463829877", 8300.0, 50.0);
-
-        Pegawai sales1 = new Sales("Tika", "350728490327424892344", 50.0, 50000.0);
-        Pegawai sales2 = new Sales("Alex", "987651234958245029814", 42.0, 51500.0);
-        Pegawai sales3 = new Sales("Jayden", "1284037294027463829878", 61.0, 60000.0);
-
-        System.out.println(pegawaiTetap1);
-        System.out.println(pegawaiTetap2);
-        System.out.println(pegawaiTetap3);
-
-        System.out.println(pegawaiHarian1);
-        System.out.println(pegawaiHarian2);
-        System.out.println(pegawaiHarian3);
-
-        System.out.println(sales1);
-        System.out.println(sales2);
-        System.out.println(sales3);
-
-    }
-}
-```
+##
 - class Pegawai
-```java
-package Main;
 
-public class Pegawai {
-    private String nama;
-    private String noKTP;
+Klik link berikut untuk melihat source codenya :
 
-    public Pegawai (String nama, String noKTP){
-        this.nama = nama;
-        this.noKTP = noKTP;
-    }
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%207/Pegawai.java)
 
-    public String getNama() {
-        return nama;
-    }
-
-    public String getNoKTP() {
-        return noKTP;
-    }
-
-    public String toString() {
-        return "Pendapatan \t\t: Rp " + (int)gaji();
-    }
-
-    public static double gaji(){
-        int gaji = 0;
-        return gaji;
-    }
-}
-```
+##
 - class PegawaiHarian
-```java
-package Main;
 
-public class PegawaiHarian extends Pegawai {
-    private double upahPerJam;
-    private double totalJam;
+Klik link berikut untuk melihat source codenya :
 
-    public PegawaiHarian(String nama, String noKTP, double upahPerJam, double totalJam){
-        super(nama, noKTP);
-        this.upahPerJam = upahPerJam;
-        this.totalJam = totalJam;
-    }
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%207/PegawaiHarian.java)
 
-    public double getUpahPerJam() {
-        return upahPerJam;
-    }
-
-    public double getTotalJam() {
-        return totalJam;
-    }
-
-    public void setUpahPerJam(double upahPerJam) {
-        this.upahPerJam = upahPerJam;
-    }
-
-    public void setTotalJam(int totalJam) {
-        this.totalJam = totalJam;
-    }
-
-    @Override
-    public String toString() {
-        return "Pegawai Harian \t: " + getNama() +
-                "\n" + "No KTP \t\t\t: " + getNoKTP() +
-                "\n" + "Upah/jam \t\t: " + getUpahPerJam() +
-                "\n" + "Total jam kerja : " + getTotalJam() +
-                "\n" + "Pendapatan \t\t: Rp " + (int)(getUpahPerJam() * getTotalJam()) + "\n";
-    }
-}
-```
+##
 - class PegawaiTetap
-```java
-package Main;
 
-public class PegawaiTetap extends Pegawai {
-    private double upah;
+Klik link berikut untuk melihat source codenya :
 
-    public PegawaiTetap(String nama, String noKTP, double upah){
-        super(nama, noKTP);
-        this.upah = upah;
-    }
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%207/PegawaiTetap.java)
 
-    public double getUpah() {
-        return upah;
-    }
-
-    public void setUpah(double upah) {
-        this.upah = upah;
-    }
-
-    @Override
-    public String toString() {
-        return "Pegawai Tetap \t: " + getNama() +
-                "\n" + "No KTP \t\t\t: " + getNoKTP() +
-                "\n" + "Upah \t\t\t: " + getUpah() +
-                "\n" + "Pendapatan \t\t: Rp " + (int)getUpah() + "\n";
-    }
-}
-```
+##
 - class Sales
-```java
-package Main;
 
-public class Sales extends Pegawai {
-    private double penjualan;
-    private double komisi;
+Klik link berikut untuk melihat source codenya :
 
-    public Sales(String nama, String noKTP, double penjualan, double komisi){
-        super(nama, noKTP);
-        this.penjualan = penjualan;
-        this.komisi = komisi;
-    }
-
-    public double getPenjualan() {
-        return penjualan;
-    }
-
-    public double getKomisi() {
-        return komisi;
-    }
-
-    public void setPenjualan(int penjualan) {
-        this.penjualan = penjualan;
-    }
-
-    public void setKomisi(double komisi) {
-        this.komisi = komisi;
-    }
-
-    @Override
-    public String toString() {
-        return "Sales \t\t\t: " + getNama() +
-                "\n" + "No KTP \t\t\t: " + getNoKTP() +
-                "\n" + "Total Penjualan : " + getPenjualan() +
-                "\n" + "Besaran Komisi \t: " + getKomisi() +
-                "\n" + "Pendapatan \t\t: Rp " + (int)(getPenjualan() * getKomisi()) + "\n";
-    }
-}
-```
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%207/Sales.java)
 
 
+
+##
 ## Tugas 8
 Studi Kasus Game Melawan Titan (Exception Handling)
 
 - class Character
-```java
-package Main;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
+Klik link berikut untuk melihat source codenya :
 
-public abstract class Character {
-    private int defense;
-    private int attack;
-    private int HP;
-    private String role;
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%208/Character.java)
 
-    public Character(String role, int HP, int attack, int defense){
-        this.role = role;
-        this.defense = defense;
-        this.attack = attack;
-        this.HP = HP;
-    }
-
-    public abstract boolean attack();
-
-    public void receiveDamage(int damage){
-        if (damage > defense){
-            this.HP = (HP + defense) - damage;
-            if (this.HP <= 0){
-                HP = 0;
-            }
-        }
-    }
-
-    public void info(){
-        System.out.println("Selamat datang di game Defend FILKOM !");
-        System.out.print("Silahkan masukkan nama player   : ");
-        Scanner scan = new Scanner(System.in);
-        String nama = scan.nextLine();
-
-        System.out.println("Silahkan pilih karakter yang anda inginkan  : ");
-        System.out.println("1.  Magician");
-        System.out.println("2.  Healer");
-        System.out.println("3.  Warrior");
-
-        try {
-            Scanner scn = new Scanner(System.in);
-            scn.nextInt();
-            System.out.println("Selamat datang, " + nama + " !");
-        } catch (InputMismatchException e) {
-            System.out.println("Masukkan angka, jangan memasukkan teks");
-
-        }
-        System.out.println("---status---");
-        System.out.println("Role    : " + getRole());
-        System.out.println("HP      : " + getHP());
-        System.out.println("Attack  : " + getAttack());
-        System.out.println("Defense : " + getDefense());
-    }
-
-    public int getDefense() {
-        return defense;
-    }
-
-    public int getAttack() {
-        return attack;
-    }
-
-    public int getHP() {
-        return HP;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setDefense(int defense) {
-        this.defense = defense;
-    }
-
-    public void setAttack(int attack) {
-        this.attack = attack;
-    }
-
-    public void setHP(int HP) {
-        this.HP = HP;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-}
-```
+##
 - class Healer
-```java
-package Main;
 
-public class Healer extends Character{
-    private int defense;
-    private int attack;
-    private int HP;
-    private String role;
+Klik link berikut untuk melihat source codenya :
 
-    public Healer(String role, int HP, int attack, int defense) {
-        super(role, HP, attack, defense);
-        this.role = role;
-        this.defense = defense;
-        this.attack = attack;
-        this.HP = HP;
-    }
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%208/Healer.java)
 
-    @Override
-    public boolean attack() {
-        double Hit = Math.random();
-        if (Hit < 0.85){
-            return true;
-        }
-        return false;
-    }
-}
-```
+##
 - class Magician
-```java
-package Main;
 
-public class Magician extends Character{
-    private int defense;
-    private int attack;
-    private int HP;
-    private String role;
+Klik link berikut untuk melihat source codenya :
 
-    public Magician(String role, int HP, int attack, int defense) {
-        super(role, HP, attack, defense);
-        this.role = role;
-        this.defense = defense;
-        this.attack = attack;
-        this.HP = HP;
-    }
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%208/Magician.java)
 
-    @Override
-    public boolean attack() {
-        double Hit = Math.random();
-        if (Hit < 0.35){
-            return true;
-        }
-        return false;
-    }
-}
-```
+##
 - class Titan
-```java
-package Main;
 
-public class Titan extends Character{
-    private int defense;
-    private int attack;
-    private int HP;
-    private String role;
+Klik link berikut untuk melihat source codenya :
 
-    public Titan(String role, int HP, int attack, int defense) {
-        super(role, HP, attack, defense);
-        this.role = role;
-        this.defense = defense;
-        this.attack = attack;
-        this.HP = HP;
-    }
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%208/Titan.java)
 
-    @Override
-    public boolean attack() {
-        double Hit = Math.random();
-        if (Hit < 0.40){
-            return true;
-        }
-        return false;
-    }
-}
-```
+##
 - class Warrior
-```java
-package Main;
 
-public class Warrior extends Character{
-    private int defense;
-    private int attack;
-    private int HP;
-    private String role;
+Klik link berikut untuk melihat source codenya :
 
-    public Warrior(String role, int HP, int attack, int defense) {
-        super(role, HP, attack, defense);
-        this.role = role;
-        this.defense = defense;
-        this.attack = attack;
-        this.HP = HP;
-    }
-
-    @Override
-    public boolean attack() {
-        double Hit = Math.random();
-        if (Hit < 0.60){
-            return true;
-        }
-        return false;
-    }
-}
-```
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%208/Warrior.java)
