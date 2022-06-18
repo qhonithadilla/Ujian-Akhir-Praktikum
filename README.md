@@ -1,255 +1,77 @@
 # Ujian-Akhir-Praktikum
 
 ## Tugas 1
-Method
 
 - Menghitung Luas
 
-```java
-package Main;
+Rudi adalah siswa SMK RPL semester 1. Ia diberikan tugas untuk membuat sebuah program sederhana yang dapat menghitung luas dari bangun datar Persegi, Segitiga, dan Lingkaran. Ketika program dijalankan pengguna dapat memilih bangun datar apa yang dihitung luasnya.
 
-import java.util.Scanner;
+Menu 1 untuk persegi : Ketika pengguna memilih menu 1 maka yang dinput adalah sisi.
 
-//Nama : Qhonitha Adilla Taufani
-//kelas : PTI-B
+Menu 2 untuk Segitiga : Ketika yang dipilih menu 2 makan yang dinput adalah alas dan tinggi.
 
-//Menghitung Luas
+Menu 3 untuk Lingkaran : ketika yang dipilih menu 3 yang diinput adalah jari - jari dengan ketentuan untuk untuk = 7 atau kelipatannya menggunakan phi 22/7 dan selain itu menggunakan 3.14.
 
-public class Luas{
-        int Persegi;
-        int Segitiga;
-        double Lingkaran;
-        static int pilih;
+Apabila input yang dimasukan tidak sesuai maka akan ditampilkan pesan Input yang anda masukan tidak sesuai.
 
-        Luas(int s){
-            this.Persegi = s * s;
-        }
-        Luas(double a, double t){
-            this.Segitiga = (int) (a * t) / 2;
-        }
-        Luas(double r){
-            if (r % 7 == 0){
-                double phi = 22/7;
-                double lingkaran = phi * r * r;
-                this.Lingkaran= (int) lingkaran;
-            }
-            else if (r % 7 != 0){
-                double phi = 3.14;
-                double lingkaran = phi * r * r;
-                this.Lingkaran= (int) lingkaran;
-            }
-        }
-        void pilih(){
-            if (pilih == 1){
-                System.out.println(Persegi);
-            }
-            else if (pilih == 2){
-                System.out.println(Segitiga);
-            }
-            else if (pilih == 3){
-                System.out.println(Lingkaran);
-            }
-            else{
-                System.out.println("Input yang anda masukan tidak sesuai");
-            }
-        }
-        public static void main(String[] args) {
-            Scanner scan = new Scanner(System.in);
-            pilih = scan.nextInt();
 
-            if (pilih == 1){
-                int sisi= scan.nextInt();
-                Luas persegi = new Luas(sisi);
-                persegi.pilih();
-            }
-            else if (pilih == 2){
-                double alas = scan.nextInt();
-                double tinggi = scan.nextInt();
-                Luas segitiga = new Luas(alas,tinggi);
-                segitiga.pilih();
-            }
-            else if (pilih == 3){
-                double jarijari = scan.nextInt();
-                Luas lingkaran = new Luas(jarijari);
-                lingkaran.pilih();
-            }
-            else{
-                System.out.println("Input yang anda masukan tidak sesuai");
-            }
-        }
-    }
-```
+Klik link berikut untuk melihat source codenya :
 
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%201/Luas.java)
+
+##
 - Menghitung Saldo
 
-```java
-package Main;
+Nasabah memiliki saldo rekening di Bank Malang Nasabah akan melakukan setor tunai tiap bulan ke bank. Di setiap akhir bulan, akan ada kondisi sebagai berikut:
 
-import java.util.Scanner;
+1. Akan ada pengurangan saldo sebesar Rp7.000,00 untuk biaya administrasi
 
-//Nama : Qhonitha Adilla Taufani
-//kelas : PTI-B
+2. Nasabah akan diberikan bonus sebesar 0,05% sebagai ungkapan terima kasih karena telah mempercayai Bank Malang.
 
-//Saldo Nasababah
-
-public class Saldo {
-
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-
-        double saldo = scan.nextInt();
-        double setoran = scan.nextInt();
-
-        System.out.println(saldoFinal(saldo, setoran));
-    }
-
-    public static double saldoFinal (double j, double k) {
-        double kurang = (j + k) - 7000;
-        double bonus = kurang * 0.05 / 100;
-
-        return kurang + bonus;
-    }
-}
-```
+3. Program akan memberi tahu sisa saldo nasabah.
 
 
+Klik link berikut untuk melihat source codenya :
+
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%201/Saldo.java)
+
+##
 - Menentukan Teks Kaisar
 
-```java
-package Main;
+Pada abad ke-18 seseorang kaisar di Romawi membutuhkan isi surat yang menggambarkan pesan namun isi surat tersebut berupa alpabet yang hurufnya digeser sebanyak N (nilai diinputkan user) kali pergeseran.
 
-import java.util.Scanner;
+1. Alfabet dengan tanpa pergeseran huruf : ABCDEFGHIJKLMNOPQRSTUVWXYZ
 
-//Nama : Qhonitha Adilla Taufani
-//kelas : PTI-B
+2. Alfabet dengan pergeseran 3 huruf ke kanan : XYZABCDEFGHIJKLMNOPQRSTUVW
 
-//Teks Kaisar
-
-public class teksKaisar {
-
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-
-        String teks = scan.nextLine();
-        int nilai = scan.nextInt();
-
-        tekskaisar(teks, nilai);
-
-    }
-    public static void tekskaisar(String teks, int nilai) {
-        String s = "";
-        char alphabet;
-
-        for(int i = 0; i < teks.length(); i++) {
-            alphabet = teks.charAt(i);
-
-            if (alphabet >= 'a' && alphabet <= 'z') {
-                alphabet = (char) (alphabet + nilai);
-
-                if (alphabet > 'z') {
-                    alphabet = (char) (alphabet + 'a' - 'z' - 1);
-                }
-                s += alphabet;
-            }
-            else if (alphabet >= 'A' && alphabet <= 'Z') {
-                alphabet = (char) (alphabet + nilai);
-
-                if (alphabet > 'Z') {
-                    alphabet = (char) (alphabet + 'A' - 'Z' - 1);
-                }
-                s += alphabet;
-            }
-            else {
-                s += alphabet;
-            }
-
-        }
-        System.out.println(s);
-    }
-}
-```
+3. Alfabet dengan pergeseran 2 huruf ke kanan : YZABCDEFGHIJKLMNOPQRSTUVWX
 
 
+Klik link berikut untuk melihat source codenya :
+
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%201/teksKaisar.java)
+
+##
 ## Tugas 2
 
 Menghitung Luas dengan Konsep OOP
 
-```java
-package Main;
+Rudi adalah siswa SMK RPL semester 1. Ia diberikan tugas untuk membuat sebuah program sederhana yang dapat menghitung luas dari bangun datar Persegi, Segitiga, dan Lingkaran. Ketika program dijalankan pengguna dapat memilih bangun datar apa yang dihitung luasnya.
 
-import java.util.Scanner;
+Menu 1 untuk persegi : Ketika pengguna memilih menu 1 maka yang dinput adalah sisi.
 
-//Nama : Qhonitha Adilla Taufani
-//kelas : PTI-B
+Menu 2 untuk Segitiga : Ketika yang dipilih menu 2 makan yang dinput adalah alas dan tinggi.
 
-//Menghitung Luas
+Menu 3 untuk Lingkaran : ketika yang dipilih menu 3 yang diinput adalah jari - jari dengan ketentuan untuk untuk = 7 atau kelipatannya menggunakan phi 22/7 dan selain itu menggunakan 3.14.
 
-public class Solution {
-    int Persegi;
-    int Segitiga;
-    double Lingkaran;
-    static int pilih;
-
-    public Solution(int s){
-        this.Persegi = s * s;
-    }
-    public Solution(double a, double t){
-        this.Segitiga = (int) (a * t) / 2;
-    }
-    public Solution(double r){
-        if (r % 7 == 0){
-            double phi = 22/7;
-            double lingkaran = phi * r * r;
-            this.Lingkaran= (int) lingkaran;
-        }
-        else if (r % 7 != 0){
-            double phi = 3.14;
-            double lingkaran = phi * r * r;
-            this.Lingkaran= (int) lingkaran;
-        }
-    }
-    void pilih(){
-        if (pilih == 1){
-            System.out.println(Persegi);
-        }
-        else if (pilih == 2){
-            System.out.println(Segitiga);
-        }
-        else if (pilih == 3){
-            System.out.println(Lingkaran);
-        }
-        else{
-            System.out.println("Input yang anda masukan tidak sesuai");
-        }
-    }
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        pilih = scan.nextInt();
-
-        if (pilih == 1){
-            int sisi= scan.nextInt();
-            Solution persegi = new Solution(sisi);
-            persegi.pilih();
-        }
-        else if (pilih == 2){
-            double alas = scan.nextInt();
-            double tinggi = scan.nextInt();
-            Solution segitiga = new Solution(alas,tinggi);
-            segitiga.pilih();
-        }
-        else if (pilih == 3){
-            double jarijari = scan.nextInt();
-            Solution lingkaran = new Solution(jarijari);
-            lingkaran.pilih();
-        }
-        else{
-            System.out.println("Input yang anda masukan tidak sesuai");
-        }
-    }
-}
-```
+Apabila input yang dimasukan tidak sesuai maka akan ditampilkan pesan Input yang anda masukan tidak sesuai.
 
 
+Klik link berikut untuk melihat source codenya :
+
+[Source Code](https://github.com/qhonithadilla/Ujian-Akhir-Praktikum/blob/main/Source%20Code/Tugas%202/Solution.java)
+
+##
 ## Tugas 3 
 
 Studi Kasus Erigo Store Malang
